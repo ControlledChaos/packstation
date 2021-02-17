@@ -1,0 +1,171 @@
+///
+/// Styles for the jQuery tabs library
+///
+/// Included in this directory as themes may want to
+/// access the tabs for frontend display.
+///
+/// Styles are kept generic for minimal correction when
+/// implementing in themes.
+///
+/// Some additional admin styles may be found at:
+/// `..app-assets/css/admin/partials/common$suffix`.
+///
+
+/**
+ * App tabs library
+ *
+ * .admin-tabs is the container class.
+ */
+
+.admin-tabs {
+
+	.admin-tabs-list {
+		list-style: none;
+		margin: 3rem 0 0;
+		padding: 0 0 0 0.5em;
+		border-bottom: solid 1px #ccd0d4;
+
+		.content-tab {
+			display: inline-block;
+			position: relative;
+
+			// Top offset same as the border-bottom width of .admin-tabs-list.
+			top: 1px;
+			margin: 0 0.15em;
+			border: solid 1px #ccd0d4;
+			font-weight: 600;
+
+			a {
+				display: block;
+				padding: 0.75em 1em;
+				background-color: #f1f1f1;
+				line-height: 1;
+				text-decoration: none;
+				color: #444;
+
+				&:hover,
+				&:focus,
+				&:active {
+					color: #23282d;
+					box-shadow: none;
+				}
+			}
+
+			&.active {
+
+				// Same as background color for the open folder effect.
+				border-bottom-color: #f1f1f1;
+
+				a {
+					color: #23282d;
+					cursor: default;
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		display: none;
+		position: relative;
+		overflow: hidden;
+		max-width: 1200px;
+		padding: 2rem 1em;
+
+		& > h2 {
+			margin-top: 0;
+
+			& + div,
+			& + section {
+				margin-top: 2rem;
+			}
+		}
+
+		section {
+
+			h3 {
+				&:first-of-type {
+					margin-top: 0;
+				}
+			}
+		}
+
+		.tab-section {
+
+			& > div {
+				padding-top: 1rem;
+			}
+		}
+
+		.content-tab-columns {
+			display: flex;
+
+			@media screen and ( max-width: 768px ) {
+				flex-direction: column;
+			}
+
+			& > div {
+				width: auto;
+
+				@media screen and ( max-width: 768px ) {
+					width: 100%;
+				}
+
+				&:not( :last-of-type ) {
+					margin-right: 2rem;
+				}
+			}
+
+			&.content-tab-columns-two {
+				& > div {
+					width: 50%;
+
+					@media screen and ( max-width: 768px ) {
+						width: 100%;
+					}
+				}
+			}
+
+			&.content-tab-columns-three {
+				& > div {
+					width: 33.33325%;
+					width: calc( 100% / 3 );
+
+					@media screen and ( max-width: 768px ) {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	// .admin-tabs[data-tab_mouseevent="hover"]
+	&[data-tab_mouseevent="hover"] {
+		.admin-tabs-list {
+			.content-tab {
+				&.active {
+
+					// Pointer when using hover.
+					a {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+.rtl {
+	.admin-tabs {
+		.admin-tabs-list {
+			padding: 0 0.5em 0 0;
+		}
+	}
+}
+
+.no-js {
+	.admin-tabs {
+		.tab-content {
+			display: block;
+		}
+	}
+}

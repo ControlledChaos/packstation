@@ -46,6 +46,32 @@ class Editor_Options {
 
 		// Run this class.
 		add_action( 'plugins_loaded', [ $this, 'init_actions' ] );
+
+		/**
+		 * Fix classic editor script bug in
+		 * WordPress 5.6.1
+		 *
+		 * @todo Remove if bug is fixed.
+		 */
+		add_action( 'admin_print_footer_scripts', [ $this, 'wp_561_editor_fix' ] );
+	}
+
+	/**
+	 * Fix classic editor script bug
+	 *
+	 * JavaScript close page alert bug in
+	 * WordPress 5.6.1
+	 *
+	 * @todo Remove if bug is fixed.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string return script block.
+	 */
+	public function wp_561_editor_fix() {
+		?>
+		<script>jQuery(document).ready(function(t){if(void 0!==window.wp.autosave){var e={post_title:t("#title").val()||"",content:t("#content").val()||"",excerpt:t("#excerpt").val()||""},n=window.wp.autosave.getCompareString(e);window.wp.autosave.server.postChanged=function(){var i=!1;return window.tinymce?(window.tinymce.each(["content","excerpt"],function(n){var o=window.tinymce.get(n);if(o&&o.isDirty()||(t("#"+n).val()||"")!==e[n])return i=!0,!1}),(t("#title").val()||"")!==e.post_title&&(i=!0),i):window.wp.autosave.getCompareString()!==n}}});</script>
+		<?php
 	}
 
 	/**

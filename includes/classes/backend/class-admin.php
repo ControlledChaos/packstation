@@ -32,9 +32,6 @@ class Admin extends Classes\Base {
 		// Get the filename of the current page.
 		global $pagenow;
 
-		// Manage website page/help pages.
-		new Manage_Website_Page;
-
 		// Run the dashboard only on the backend index screen.
 		if ( 'index.php' == $pagenow ) {
 			new Dashboard;

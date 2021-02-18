@@ -60,7 +60,10 @@ function text_domain() {
  * @access public
  * @return void
  */
-function packstation() {
+if ( function_exists( 'pack_station' ) ) {
+	return;
+}
+function pack_station() {
 
 	// Access current admin page.
 	global $pagenow;
@@ -79,13 +82,18 @@ function packstation() {
 	// Get compatibility functions.
 	require APS_PATH . 'includes/vendor/compatibility.php';
 
-	// Instantiate settings classes.
-	new Settings\Settings;
-
-	// Instantiate core classes.
+	/**
+	 * Instantiate core classes
+	 *
+	 * These include registering post types & taxonomies.
+	 */
 	new Core\Type_Tax;
-	new Core\Register_Admin;
-	new Core\Register_Site_Help;
+	new Core\Register_Concert;
+	new Core\Register_Family;
+	new Core\Register_Menu;
+	new Core\Register_Season;
+	new Core\Register_Species;
+	new Core\Register_Menu_Type;
 
 	// If the Customizer is disabled in the system config file.
 	if ( ( defined( 'APS_ALLOW_CUSTOMIZER' ) && false == APS_ALLOW_CUSTOMIZER ) && ! current_user_can( 'develop' ) ) {
@@ -164,7 +172,12 @@ function packstation() {
 	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+
+	// System email filters.
+	add_filter( 'wp_mail_from_name', function( $name ) {
+		return apply_filters( 'aps_mail_from_name', get_bloginfo( 'name' ) );
+	});
 }
 
 // Run the plugin.
-packstation();
+pack_station();

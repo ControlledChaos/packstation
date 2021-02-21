@@ -99,15 +99,17 @@ define( 'APS_CLASSES', [
 	APS_CLASS_NS . '\Vendor\Register_ACF_Sub_Options' => APS_CLASS['vendor'] . 'register-acf-sub-options.php',
 
 	// Backend/admin classes,
-	APS_CLASS_NS . '\Admin\Admin'                   => APS_CLASS['admin'] . 'admin.php',
-	APS_CLASS_NS . '\Admin\Add_Page'                => APS_CLASS['admin'] . 'add-page.php',
-	APS_CLASS_NS . '\Admin\Add_Subpage'             => APS_CLASS['admin'] . 'add-subpage.php',
-	APS_CLASS_NS . '\Admin\User_Colors'             => APS_CLASS['admin'] . 'user-colors.php',
-	APS_CLASS_NS . '\Admin\Dashboard'               => APS_CLASS['admin'] . 'dashboard.php',
-	APS_CLASS_NS . '\Admin\Posts_List_Table'        => APS_CLASS['admin'] . 'posts-list-table.php',
+	APS_CLASS_NS . '\Admin\Admin'            => APS_CLASS['admin'] . 'admin.php',
+	APS_CLASS_NS . '\Admin\Add_Page'         => APS_CLASS['admin'] . 'add-page.php',
+	APS_CLASS_NS . '\Admin\Add_Subpage'      => APS_CLASS['admin'] . 'add-subpage.php',
+	APS_CLASS_NS . '\Admin\User_Colors'      => APS_CLASS['admin'] . 'user-colors.php',
+	APS_CLASS_NS . '\Admin\Dashboard'        => APS_CLASS['admin'] . 'dashboard.php',
+	APS_CLASS_NS . '\Admin\Posts_List_Table' => APS_CLASS['admin'] . 'posts-list-table.php',
 
 	// Frontend classes.
-	APS_CLASS_NS . '\Front\Frontend' => APS_CLASS['front'] . 'frontend.php',
+	APS_CLASS_NS . '\Front\Frontend'       => APS_CLASS['front'] . 'frontend.php',
+	APS_CLASS_NS . '\Front\Title_Filter'   => APS_CLASS['front'] . 'title-filter.php',
+	APS_CLASS_NS . '\Front\Content_Filter' => APS_CLASS['front'] . 'content-filter.php',
 
 	// General/miscellaneos classes.
 

@@ -87,4 +87,22 @@ class Register_ACF_Options extends Admin\Add_Page {
 		];
 		return $options;
 	}
+
+	/**
+	 * Field groups
+	 *
+	 * Register field groups for this options page.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function field_groups() {
+
+		/**
+		 * Include from another file or use the
+		 * `acf_add_local_field_group` function
+		 * here, as exported.
+		 */
+	}
 }

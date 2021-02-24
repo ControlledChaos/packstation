@@ -54,10 +54,6 @@ class Register_ACF_Concert_Options extends Register_ACF_Sub_Options {
 	 * @since  1.0.0
 	 * @access protected
 	 * @var    string The slug name to refer to the menu by.
-	 *                Should be unique for the menu page and
-	 *                only include lowercase alphanumeric,
-	 *                dashes, and underscores characters to be
-	 *                compatible with sanitize_key().
 	 */
 	protected $menu_slug = 'concert-options';
 

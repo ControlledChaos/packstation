@@ -163,4 +163,17 @@ class Register_Concert extends Register_Type {
 
 		return $labels;
 	}
+
+	/**
+	 * Field groups
+	 *
+	 * Register field groups for this options page.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function field_groups() {
+		include_once APS_PATH . '/includes/fields/acf-concert-fields.php';
+	}
 }

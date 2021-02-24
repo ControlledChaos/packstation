@@ -123,6 +123,7 @@ function pack_station() {
 
 	// Instantiate third-party classes.
 	new Vendor\Plugins;
+	new Vendor\Register_ACF_Concert_Options;
 
 	// Instantiate backend classes.
 	if ( is_admin() ) {

@@ -97,6 +97,7 @@ define( 'APS_CLASSES', [
 	APS_CLASS_NS . '\Vendor\ACF_Columns' => APS_CLASS['vendor'] . 'acf-columns.php',
 	APS_CLASS_NS . '\Vendor\Register_ACF_Options'     => APS_CLASS['vendor'] . 'register-acf-options.php',
 	APS_CLASS_NS . '\Vendor\Register_ACF_Sub_Options' => APS_CLASS['vendor'] . 'register-acf-sub-options.php',
+	APS_CLASS_NS . '\Vendor\Register_ACF_Concert_Options' => APS_CLASS['vendor'] . 'concert-options.php',
 
 	// Backend/admin classes,
 	APS_CLASS_NS . '\Admin\Admin'            => APS_CLASS['admin'] . 'admin.php',

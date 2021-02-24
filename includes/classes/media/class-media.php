@@ -82,11 +82,47 @@ class Media {
 	 */
 	public function image_sizes() {
 
-		// For link embedding and sharing on social sites.
-		add_image_size( __( 'meta-image', APS_CONFIG['domain'] ), 1280, 720, true );
+		/**
+		 * Meta image
+		 *
+		 * For link embedding and sharing on social sites.
+		 * 16:9 aspect ratio.
+		 */
+		add_image_size( 'meta-image', 1280, 720, true );
 
-		// For use as featured image in admin columns.
-		add_image_size( __( 'column-thumbnail', APS_CONFIG['domain'] ), 48, 48, true );
+		/**
+		 * Column thumnail
+		 *
+		 * For use as featured image in admin columns.
+		 * 1:1 aspect ratio.
+		 */
+		add_image_size( 'column-thumbnail', 48, 48, true );
+
+		/**
+		 * Concert acts
+		 *
+		 * For use in displaying featured images of
+		 * artists in frontend templates.
+		 * 4:3 (classic film) aspect ratio.
+		 * Banner is 16:9 (HD video) aspect ratio.
+		 *
+		 * The `concert-act` size, without extension,
+		 * is 1024x768 because it's large enough to
+		 * be worth enlarging in a modal window and
+		 * small enough that images should be available
+		 * from acts without needing to enlarge prior
+		 * to upload.
+		 *
+		 * Banner size in case single pages are wanted
+		 * for each act. The 1280x720 size should be
+		 * large enough for a heading/background image.
+		 */
+		if ( ! has_image_size( 'concert-act' ) ) {
+			add_image_size( 'concert-act-small', 320, 240, true );
+			add_image_size( 'concert-act-medium', 640, 480, true );
+			add_image_size( 'concert-act', 1024, 768, true );
+			add_image_size( 'concert-act-banner', 1280, 720, true );
+		}
 	}
 
 	/**

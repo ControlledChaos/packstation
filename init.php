@@ -127,6 +127,7 @@ function pack_station() {
 	// Instantiate backend classes.
 	if ( is_admin() ) {
 		new Admin\Admin;
+		new Admin\Posts_To_News();
 	}
 
 	// Instantiate users classes.
@@ -135,6 +136,7 @@ function pack_station() {
 	// Instantiate frontend classes.
 	if ( ! is_admin() ) {
 		new Front\Frontend;
+		new Front\Content_Concert;
 	}
 
 	// Disable WordPress administration email verification prompt.

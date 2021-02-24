@@ -123,6 +123,12 @@ class Media {
 			add_image_size( 'concert-act', 1024, 768, true );
 			add_image_size( 'concert-act-banner', 1280, 720, true );
 		}
+
+		// Set medium width if empty or default.
+		$m_size_w = get_option( 'medium_size_w' );
+		if ( empty( $m_size_w ) || 300 == $m_size_w ) {
+			update_option( 'medium_size_w', 320 );
+		}
 	}
 
 	/**

@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-class Sample_ACF_Sub_Options extends Register_ACF_Sub_Options {
+class Sample_ACF_Sub_Options extends Add_ACF_Suboptions {
 
 	/**
 	 * Parent slug
@@ -95,11 +95,6 @@ class Sample_ACF_Sub_Options extends Register_ACF_Sub_Options {
 	 * @return void
 	 */
 	public function field_groups() {
-
-		/**
-		 * Include from another file or use the
-		 * `acf_add_local_field_group` function
-		 * here, as exported.
-		 */
+		include_once SCP_PATH . '/includes/fields/acf-sample-suboptions.php';
 	}
 }

@@ -52,6 +52,8 @@ define( 'APS_CLASS_NS', __NAMESPACE__ . '\Classes' );
  * add them to the following array rather than requiring the file
  * elsewhere. Be sure to include the precise namespace.
  *
+ * SAMPLES: Uncomment sample classes to load them.
+ *
  * @since 1.0.0
  * @var   array Defines an array of class files to register.
  */
@@ -95,8 +97,10 @@ define( 'APS_CLASSES', [
 	APS_CLASS_NS . '\Vendor\Plugins'     => APS_CLASS['vendor'] . 'plugins.php',
 	APS_CLASS_NS . '\Vendor\ACF'         => APS_CLASS['vendor'] . 'acf.php',
 	APS_CLASS_NS . '\Vendor\ACF_Columns' => APS_CLASS['vendor'] . 'acf-columns.php',
-	APS_CLASS_NS . '\Vendor\Register_ACF_Options'     => APS_CLASS['vendor'] . 'register-acf-options.php',
-	APS_CLASS_NS . '\Vendor\Register_ACF_Sub_Options' => APS_CLASS['vendor'] . 'register-acf-sub-options.php',
+	APS_CLASS_NS . '\Vendor\Add_ACF_Options'     => APS_CLASS['vendor'] . 'register-acf-options.php',
+	APS_CLASS_NS . '\Vendor\Add_ACF_Suboptions' => APS_CLASS['vendor'] . 'register-acf-sub-options.php',
+	// SCP_CLASS_NS . '\Vendor\Sample_ACF_Options'    => SCP_CLASS['vendor'] . 'sample-acf-options.php',
+	// SCP_CLASS_NS . '\Vendor\Sample_ACF_Suboptions' => SCP_CLASS['vendor'] . 'sample-acf-suboptions.php',
 	APS_CLASS_NS . '\Vendor\Register_ACF_Concert_Options' => APS_CLASS['vendor'] . 'concert-options.php',
 	APS_CLASS_NS . '\Vendor\Register_ACF_Family_Options'  => APS_CLASS['vendor'] . 'family-options.php',
 

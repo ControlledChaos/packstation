@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-class Register_ACF_Concert_Options extends Register_ACF_Sub_Options {
+class Register_ACF_Concert_Options extends Add_ACF_Suboptions {
 
 	/**
 	 * Parent slug
